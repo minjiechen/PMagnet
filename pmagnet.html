@@ -90,44 +90,42 @@
 <span id="pmagnet-core-module"></span><h2>pmagnet.core module<a class="headerlink" href="#module-pmagnet.core" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pmagnet.core.core_loss">
-<span class="sig-prename descclassname"><span class="pre">pmagnet.core.</span></span><span class="sig-name descname"><span class="pre">core_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux_delta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'iGSE'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pmagnet.core.core_loss" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pmagnet.core.</span></span><span class="sig-name descname"><span class="pre">core_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'iGSE'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pmagnet.core.core_loss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate magnetic core loss of a material</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>material</strong> – One of N27/N87/N49</p></li>
-<li><p><strong>freq</strong> – Frequency of excitation waveform</p></li>
-<li><p><strong>flux_delta</strong> – </p></li>
-<li><p><strong>flux</strong> – Waveform Pattern Relative Flux Density (mT)</p></li>
-<li><p><strong>duty</strong> – Waveform Pattern Duty in a Cycle (%)</p></li>
+<li><p><strong>freq</strong> – Frequency of excitation waveform (Hz)</p></li>
+<li><p><strong>flux</strong> – Relative Flux Density (mT) in a single waveform cycle, as an ndarray</p></li>
+<li><p><strong>duty</strong> – Duty (%) in a single waveform cycle, as an ndarray</p></li>
 <li><p><strong>algorithm</strong> – Only ‘iGSE’ supported for now</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>Core loss (kW/m^3)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pmagnet.core.core_loss_iGSE">
-<span class="sig-prename descclassname"><span class="pre">pmagnet.core.</span></span><span class="sig-name descname"><span class="pre">core_loss_iGSE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux_delta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pmagnet.core.core_loss_iGSE" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pmagnet.core.</span></span><span class="sig-name descname"><span class="pre">core_loss_iGSE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pmagnet.core.core_loss_iGSE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate magnetic core loss using iGSE</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>freq</strong> – frequency of excitation waveform</p></li>
-<li><p><strong>flux_delta</strong> – </p></li>
-<li><p><strong>flux</strong> – </p></li>
-<li><p><strong>duty</strong> – </p></li>
-<li><p><strong>k_i</strong> – </p></li>
-<li><p><strong>alpha</strong> – </p></li>
-<li><p><strong>beta</strong> – </p></li>
-<li><p><strong>n_interval</strong> – </p></li>
+<li><p><strong>freq</strong> – Frequency of excitation waveform (Hz)</p></li>
+<li><p><strong>flux</strong> – Relative Flux Density (mT) in a single waveform cycle, as an ndarray</p></li>
+<li><p><strong>duty</strong> – Duty (%) in a single waveform cycle, as an ndarray</p></li>
+<li><p><strong>k_i</strong> – Stenmetz coefficient k_i</p></li>
+<li><p><strong>alpha</strong> – Steinmetz coefficient alpha</p></li>
+<li><p><strong>beta</strong> – Steinmetz coefficient beta</p></li>
+<li><p><strong>n_interval</strong> – No. of intervals to use to solve iGSE using trapezoidal rule</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>Core loss (kW/m^3)</p>
 </dd>
 </dl>
 </dd></dl>
