@@ -361,7 +361,7 @@ if function_select == "Core Loss Prediction":
         core_loss = np.random.rand()  # TBD
         return core_loss
     
-    def calc_iGSE_arbit(Freq,Flux,flux_list,duty_list,ki,alpha,beta):
+    def calc_iGSE_arbit(Freq,flux_delta,flux_list,duty_list,ki,alpha,beta):
         time = np.linspace(0, 1 / Freq, 10001)
         T = time[-1] - time[0]
         B = np.interp(time, np.multiply(duty_list, T), flux_list)
